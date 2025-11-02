@@ -1,3 +1,5 @@
+console.log("✅ getdates.js is successfully connected!");
+
 // Display current year dynamically
 document.getElementById("currentyear").textContent = new Date().getFullYear();
 

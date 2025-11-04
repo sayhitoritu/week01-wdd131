@@ -1,0 +1,26 @@
+/* temples-large.css - desktop overrides */
+@media (min-width: 700px) {
+  .menu-button { display: none; }    /* hide hamburger on larger screens */
+
+  .header-inner { gap: 2rem; }
+  .primary-nav {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .primary-nav a {
+    color: white;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* grid: multi-column layout on larger screens */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .page-heading { font-size: 1.5rem; margin-bottom: 1.25rem; }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temples Album</title>
+    <meta name="description" content="WDD131 | Temple Album by Ritu Rai | Responsive photo gallery with hamburger menu." />
+  <meta name="author" content="Ritu Rai" />
+
+  <!-- mobile-first CSS then large-screen overrides -->
+  <link rel="stylesheet" href="styles/temples.css" />
+  <link rel="stylesheet" href="styles/temples-large.css" />
+
+  <!-- JavaScript (deferred to run after parsing) -->
+  <script src="script/temples.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Temple Album</h1>
+
+      <!-- hamburger menu button (visible on mobile) -->
+      <button id="menuButton" class="menu-button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav id="primaryNav" class="primary-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="#old">Old</a>
+        <a href="#new">New</a>
+        <a href="#large">Large</a>
+        <a href="#small">Small</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-heading">My Favorite Temples</h2>
+
+    <section class="gallery" aria-label="Temple photo gallery">
+      <figure>
+        <img src="images\Salt_Lake_Temple.jpg" alt="Salt Lake Temple" />
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\bengaluru-india-temple.jpg" alt="Bengaluru-india-temple India Temple" />
+        <figcaption>Bangaluru India Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\RomeTempleatSunset.jpg" alt="Rome Italy Temple" />
+        <figcaption>Rome Italy Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Provo_City_Center_Temple.jpg" alt="Provo City Temple" />
+        <figcaption>Provo City Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Paris france temple.jpg" alt="Paris France Temple" />
+        <figcaption>Paris France Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Payson_Utah_Temple.jpg" alt="Payson Utah Temple" />
+        <figcaption>Payson Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Los_Angeles_Temple_2.jpg" alt="Los Angeles Temple" />
+        <figcaption>Los Angeles Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Tokyo_japan_Temple.jpg" alt="Tokyo Japan Temple" />
+        <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images\Manila_Philippines_Temple.jpg" alt="Manila_Philippines_Temple " />
+        <figcaption>Manila Philippines Temple</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> &nbsp; * Ritu Rai * India</p>
+    <p id="lastModified">Last Modification: </p>
+  </footer>
+</body>
+</html>

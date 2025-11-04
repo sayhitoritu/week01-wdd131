@@ -76,7 +76,7 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.card h2 {
+.card h1 {
   text-align: center;
   color: var(--primary-color);
   background-color: var(--accent-color);
@@ -92,7 +92,7 @@ main {
   border: 2px solid #ddd;
 }
 
-.about h2 {
+.about h1 {
   text-align: center;
   color: var(--primary-color);
 }
@@ -119,7 +119,7 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.about h3 {
+.about h2 {
   text-align: center;
   margin-top: 1.5rem;
   border-bottom: 2px solid var(--accent-color);
@@ -148,7 +148,7 @@ main {
   border: 2px solid #ddd;
 }
 
-.resources h2 {
+.resources h1 {
   text-align: center;
   color: var(--primary-color);
 }

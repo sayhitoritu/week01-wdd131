@@ -1,19 +1,34 @@
-// Display current year and last modified date
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = document.lastModified;
+// scripts/place.js
+// Show copyright year and last modified
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = 'Last Modification: ' + document.lastModified;
 
-// Wind Chill calculation
-function calculateWindChill(temp, wind) {
-    return 13.12 + 0.6215 * temp - 11.37 * Math.pow(wind, 0.16) + 0.3965 * temp * Math.pow(wind, 0.16);
+// Static weather values (for assignment)
+// You can later replace these with API results.
+const tempF = 50; // degrees Fahrenheit
+const windMph = 5; // mph
+const cond = 'Partly Cloudy';
+
+// fill initial DOM
+document.getElementById('temp').textContent = tempF;
+document.getElementById('wind').textContent = windMph;
+document.getElementById('cond').textContent = cond;
+
+// Wind chill formula (imperial) — returned value rounded to one decimal
+// Only calculate if temp <= 50 F AND wind > 3 mph (viable condition per spec).
+function calculateWindChill(tempF, windMph) {
+  // Standard NOAA formula for wind chill (°F)
+  return 35.74 + 0.6215 * tempF - 35.75 * Math.pow(windMph, 0.16) + 0.4275 * tempF * Math.pow(windMph, 0.16);
 }
 
-const temp = parseFloat(document.querySelector("#temp").textContent);
-const wind = parseFloat(document.querySelector("#wind").textContent);
-const chillElement = document.querySelector("#chill");
+(function updateWindChill() {
+  const out = document.getElementById('windchill');
+  if (tempF <= 50 && windMph > 3) {
+    const wc = calculateWindChill(tempF, windMph);
+    out.textContent = Math.round(wc * 10) / 10; // one decimal
+  } else {
+    out.textContent = 'N/A';
+  }
+})();
 
-if (temp <= 10 && wind > 4.8) {
-    chillElement.textContent = calculateWindChill(temp, wind).toFixed(1);
-} else {
-    chillElement.textContent = "N/A";
-}
 

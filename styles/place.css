@@ -1,60 +1,140 @@
+/* ===================================
+   GLOBAL VARIABLES
+=================================== */
 :root {
-  --primary-color: #1a73e8;
-  --dark-bg: rgba(0, 0, 0, 0.7);
+  --primary: #1a73e8;
+  /* header blue */
+  --accent: #ffc107;
+  /* gold */
+  --bg: #f8f8f8;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-dark: #222;
   --text-light: #fff;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* ===================================
+   GENERAL RESET
+=================================== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+/* ===================================
+   HEADER
+=================================== */
+header {
+  background: var(--primary);
   color: var(--text-light);
+  padding: 1.8rem 1rem;
   text-align: center;
 }
 
-header {
-  background-color: var(--primary-color);
-  padding: 1rem;
+nav a {
+  color: var(--text-light);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero {
+  position: relative;
+  padding-top: 14rem;
+  /* FIX: space so cards don't cover image in mobile */
 }
 
 .hero img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 0;
 }
 
-.data, .weather {
-  position: absolute;
-  background-color: var(--dark-bg);
-  color: white;
-  text-align: left;
+/* ===================================
+   INFO + WEATHER CARDS (MOBILE)
+=================================== */
+.info-card,
+.weather-card {
+  position: relative;
+  /* FIX: NO OVERLAY in mobile */
+  background: var(--card-bg);
   padding: 1rem;
-  border-radius: 5px;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
-.data {
-  top: 180px;
-  left: 40px;
-  max-width: 250px;
+.weather-card h3::after {
+  content: " ⛅";
+  /* FIX: required pseudo-element */
+  font-size: 1.3rem;
 }
 
-.weather {
-  bottom: 100px;
-  right: 40px;
-  max-width: 250px;
+/* ===================================
+   LARGER SCREENS — RESTORE OVERLAY
+=================================== */
+@media (min-width: 900px) {
+
+  .hero {
+    padding-top: 0;
+    /* remove mobile padding */
+  }
+
+  .info-card {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 26%;
+    transform: translateY(-20%);
+  }
+
+  .weather-card {
+    position: absolute;
+    right: 5%;
+    bottom: 12%;
+    width: 22%;
+  }
+
+  /*--.weather-card h3::after {
+    content: url("images/weather.svg"); /* SVG icon */
 }
 
-.data h2, .weather h2 {
-  background: var(--primary-color);
-  padding: 0.4rem;
-  border-radius: 3px;
+--*/
 }
 
+/* ===================================
+   ABOUT SECTION
+=================================== */
+section.about {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+section.about h2 {
+  margin-top: 0;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
 footer {
-  background-color: var(--primary-color);
-  padding: 0.8rem;
-  color: white;
+  background: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
 }
-
-

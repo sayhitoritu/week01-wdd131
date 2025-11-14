@@ -1,54 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>India | Place Page - Ritu Rai</title>
-  <link rel="stylesheet" href="styles/place.css" />
-  <script src="scripts/place.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- REQUIRED: Meta description & author for audit -->
+  <meta name="description"
+    content="Discover the Taj Mahal — a responsive page featuring images, quick facts, and current weather with dynamic wind-chill.">
+  <meta name="author" content="Ritu Rai">
+
+  <title>Place — Taj Mahal | Ritu Rai</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/place.css">
+
 </head>
 
 <body>
-  <header>
-    <h1>India</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Delhi — Taj Mahal</h1>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="temples.html">Temples</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <picture class="hero">
-      <source srcset="images/taj-large.webp" media="(min-width: 1000px)">
-      <source srcset="images/taj-medium.webp" media="(min-width: 600px)">
-      <img src="images/taj_small.webp" alt="Taj Mahal, Agra India" width="1200" height="800">
-    </picture>
+    <section class="hero">
+      <!-- responsive hero using picture + webp variants -->
+      <picture>
+        <source srcset="images/taj-large.webp" media="(min-width:1200px)">
+        <source srcset="images/taj-medium.webp" media="(min-width:600px)">
+        <img src="images/taj_small.webp" alt="Taj Mahal front view with reflecting pool" class="hero-img" />
+      </picture>
 
-    <section class="data">
-      <h2>Data</h2>
-      <ul>
-        <li><strong>Area:</strong> 3,287,263 sq km</li>
-        <li><strong>Population:</strong> 1.4 billion</li>
-        <li><strong>Capital:</strong> New Delhi</li>
-        <li><strong>Languages:</strong> Hindi, English</li>
-        <li><strong>Currency:</strong> Indian Rupee (₹)</li>
-        <li><strong>Time Zone:</strong> UTC +5:30</li>
-        <li><strong>Calling Code:</strong> +91</li>
-      </ul>
+      <!-- left floating info card -->
+      <aside class="info-card" aria-labelledby="info-heading">
+        <h2 id="info-heading">About</h2>
+        <ul>
+          <li><strong>Location:</strong> Delhi, India</li>
+          <li><strong>Built:</strong> 1632–1653</li>
+          <li><strong>Material:</strong> White marble</li>
+          <li><strong>UNESCO:</strong> World Heritage Site</li>
+        </ul>
+      </aside>
+
+      <!-- weather box (SVG + dynamic wind chill) -->
+      <aside class="weather-card" aria-labelledby="weather-heading">
+        <h2 id="weather-heading" class="weather">Weather</h2>
+
+        <!-- Inline SVG icon (scalable) -->
+        <div class="weather-icon" aria-hidden="true">
+          <!-- simple cloud+sun svg -->
+          <svg width="56" height="40" viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg" role="img"
+            focusable="false">
+            <title>Partly cloudy</title>
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="12" cy="12" r="8" fill="#FFD54A" />
+              <g transform="translate(20,8)" fill="#CFD8DC">
+                <ellipse cx="16" cy="18" rx="18" ry="12" />
+                <ellipse cx="6" cy="16" rx="10" ry="8" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <dl>
+          <dt>Temperature(°F)</dt>
+          <dd id="temp">50</dd>
+          <dt>Conditions</dt>
+          <dd id="cond">Partly Cloudy</dd>
+          <dt>Wind(mph)</dt>
+          <dd id="wind">5</dd>
+          <dt>Wind Chill(°F)</dt>
+          <dd id="windchill">—</dd>
+        </dl>
+      </aside>
     </section>
 
-    <section class="weather">
-      <h2>Weather <span class="icon">⛅</span></h2>
-      <ul>
-        <li><strong>Temperature (°C):</strong> <span id="temp">30</span></li>
-        <li><strong>Conditions:</strong> Clear Sky</li>
-        <li><strong>Wind (km/h):</strong> <span id="wind">10</span></li>
-        <li><strong>Wind Chill (°C):</strong> <span id="chill"></span></li>
-      </ul>
+    <!-- content area: two-column layout on larger screens -->
+    <section class="content container">
+      <article class="main-text">
+        <h2>About the Taj Mahal</h2>
+        <p>The Taj Mahal is a white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz
+          Mahal. It is one of the most recognizable structures in the world, admired for its balanced architecture and
+          intricate decoration.</p>
+      </article>
+
+      <!-- <aside class="quick-links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">Visitor Info</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Architecture</a></li>
+        </ul>
+      </aside> -->
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="currentyear"></span> 🌸 Ritu Rai 🌸 New Delhi, India</p>
-    <p>Last Modification: <span id="lastModified"></span></p>
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> • Ritu Rai • India</p>
+    <p id="lastModified">Last Modification: </p>
   </footer>
+
+  <script src="scripts/place.js" defer></script>
 </body>
 
 </html>

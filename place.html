@@ -15,6 +15,8 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles/place.css">
 
+  <script src="scripts/place.js" defer></script>
+
 </head>
 
 <body>
@@ -52,7 +54,9 @@
 
       <!-- weather box (SVG + dynamic wind chill) -->
       <aside class="weather-card" aria-labelledby="weather-heading">
-        <h2 id="weather-heading" class="weather">Weather</h2>
+        <!-- <h2 id="weather-heading" class="weather">Weather</h2> -->
+        <h2>Weather <span class="weather-icon"></span></h2>
+
 
         <!-- Inline SVG icon (scalable) -->
         <div class="weather-icon" aria-hidden="true">
@@ -108,7 +112,7 @@
     <p id="lastModified">Last Modification: </p>
   </footer>
 
-  <script src="scripts/place.js" defer></script>
+
 </body>
 
 </html>

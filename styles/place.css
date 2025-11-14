@@ -105,11 +105,10 @@ nav a:hover {
     width: 22%;
   }
 
-  /*--.weather-card h3::after {
-    content: url("images/weather.svg"); /* SVG icon */
-}
-
---*/
+  .weather-card h3::after {
+    content: url("images/weather.svg");
+    /* SVG icon */
+  }
 }
 
 /* ===================================

@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #1a73e8;
+  --dark-bg: rgba(0, 0, 0, 0.7);
+  --text-light: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: var(--text-light);
+  text-align: center;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.data, .weather {
+  position: absolute;
+  background-color: var(--dark-bg);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.data {
+  top: 180px;
+  left: 40px;
+  max-width: 250px;
+}
+
+.weather {
+  bottom: 100px;
+  right: 40px;
+  max-width: 250px;
+}
+
+.data h2, .weather h2 {
+  background: var(--primary-color);
+  padding: 0.4rem;
+  border-radius: 3px;
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding: 0.8rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+

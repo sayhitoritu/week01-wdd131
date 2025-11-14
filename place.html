@@ -54,37 +54,14 @@
 
       <!-- weather box (SVG + dynamic wind chill) -->
       <aside class="weather-card" aria-labelledby="weather-heading">
-        <!-- <h2 id="weather-heading" class="weather">Weather</h2> -->
-        <h2>Weather <span class="weather-icon"></span></h2>
+        <h2 id="weather-heading">Weather <span class="weather-icon"></span></h2>
 
-
-        <!-- Inline SVG icon (scalable) -->
-        <div class="weather-icon" aria-hidden="true">
-          <!-- simple cloud+sun svg -->
-          <svg width="56" height="40" viewBox="0 0 64 48" xmlns="http://www.w3.org/2000/svg" role="img"
-            focusable="false">
-            <title>Partly cloudy</title>
-            <g fill="none" fill-rule="evenodd">
-              <circle cx="12" cy="12" r="8" fill="#FFD54A" />
-              <g transform="translate(20,8)" fill="#CFD8DC">
-                <ellipse cx="16" cy="18" rx="18" ry="12" />
-                <ellipse cx="6" cy="16" rx="10" ry="8" />
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <dl>
-          <dt>Temperature(°F)</dt>
-          <dd id="temp">50</dd>
-          <dt>Conditions</dt>
-          <dd id="cond">Partly Cloudy</dd>
-          <dt>Wind(mph)</dt>
-          <dd id="wind">5</dd>
-          <dt>Wind Chill(°F)</dt>
-          <dd id="windchill">—</dd>
-        </dl>
+        <p><strong>Temperature(°F):</strong> <span id="temperature">50</span></p>
+        <p><strong>Conditions:</strong> <span id="conditions">Partly Cloudy</span></p>
+        <p><strong>Wind(mph):</strong> <span id="wind">5</span></p>
+        <p><strong>Wind Chill(°F):</strong> <span id="windchill">48.2</span></p>
       </aside>
+
     </section>
 
     <!-- content area: two-column layout on larger screens -->

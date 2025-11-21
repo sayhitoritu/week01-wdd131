@@ -1,3 +1,9 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   --primary: #162238;
   --accent: #e6c987;

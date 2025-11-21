@@ -33,6 +33,20 @@ body {
 }
 
 /* NAVIGATION - default mobile (column) then row on large screens */
+#navMenu ul {
+  display: flex;
+  flex-direction: inherit;
+  /* follows #navMenu setting */
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#navMenu li {
+  list-style: none;
+}
+
 #navMenu {
   display: flex;
   /* <- audit wants flex on nav or child */

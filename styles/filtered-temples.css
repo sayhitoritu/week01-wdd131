@@ -1,0 +1,83 @@
+:root {
+  --primary: #162238;
+  --accent: #e6c987;
+  --bg: #faf7f0;
+  --card: #ffffff;
+  --text: #222;
+  --radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+.site-header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+#menuButton {
+  background: transparent;
+  color: white;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+#navMenu {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+#navMenu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#navMenu.open {
+  display: flex;
+}
+
+/* TEMPLES GRID */
+.temple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius);
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem 0 0;
+}
+
+footer {
+  background: var(--primary);
+  text-align: center;
+  padding: 1rem;
+  color: white;
+}

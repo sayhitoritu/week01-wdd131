@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Temples</title>
+
+    <meta name="description" content="WDD131 | Filtered Temple Album by Ritu Rai">
+    <meta name="author" content="Ritu Rai">
+
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Filtered Temple Album</h1>
+
+        <button id="menuButton" aria-expanded="false" aria-label="Open Menu">☰</button>
+
+        <nav id="navMenu">
+            <a data-filter="home">Home</a>
+            <a data-filter="old">Old</a>
+            <a data-filter="new">New</a>
+            <a data-filter="large">Large</a>
+            <a data-filter="small">Small</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Temples</h2>
+
+        <section id="templeContainer" class="temple-grid"></section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> • Ritu Rai • India</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

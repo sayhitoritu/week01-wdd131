@@ -34,19 +34,23 @@ body {
 
 /* NAVIGATION - default mobile (column) then row on large screens */
 #navMenu {
-  display: flex;              /* <- audit wants flex on nav or child */
-  flex-direction: column;     /* mobile: stack vertically */
+  display: flex;
+  /* <- audit wants flex on nav or child */
+  flex-direction: column;
+  /* mobile: stack vertically */
   gap: 0.25rem;
   margin-top: 1rem;
   align-items: center;
   transition: max-height .25s ease;
-  max-height: 0;              /* hidden by default (for hamburger) */
+  max-height: 0;
+  /* hidden by default (for hamburger) */
   overflow: hidden;
 }
 
 /* When open (toggled by JS) reveal the menu */
 #navMenu.open {
-  max-height: 400px; /* large enough for menu items */
+  max-height: 400px;
+  /* large enough for menu items */
 }
 
 /* Nav links look */
@@ -63,9 +67,9 @@ body {
 /* Hover + focus states (also addresses the :hover audit) */
 #navMenu a:hover,
 #navMenu a:focus {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 

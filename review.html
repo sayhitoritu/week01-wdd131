@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Submitted</title>
+  <meta name="description" content="Confirmation page for submitted product review." />
+  <meta name="author" content="Ritu Rai" />
+
+  <link rel="stylesheet" href="styles/form.css" />
+  <script src="scripts/review.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Thank You!</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-card" aria-labelledby="confirm-heading">
+      <h2 id="confirm-heading">Your Review Has Been Submitted</h2>
+
+      <p class="thank-you">
+        We appreciate you taking the time to share your feedback.
+      </p>
+
+      <div class="summary">
+        <h3>Review Summary</h3>
+        <p><strong>Product:</strong> <span id="summaryProduct">—</span></p>
+        <p><strong>Rating:</strong> <span id="summaryRating">—</span></p>
+        <p><strong>Installation Date:</strong> <span id="summaryDate">—</span></p>
+        <p><strong>Useful Features:</strong> <span id="summaryFeatures">—</span></p>
+        <p><strong>Your Name:</strong> <span id="summaryName">—</span></p>
+      </div>
+
+      <p class="counter">
+        Total reviews you have submitted from this browser:
+        <strong><span id="reviewCount">0</span></strong>
+      </p>
+
+      <p class="back-link">
+        <a href="form.html">Submit another review</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> • Ritu Rai • WDD 131</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

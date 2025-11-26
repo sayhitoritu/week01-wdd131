@@ -1,0 +1,252 @@
+:root {
+  --bg: #f3f4f6;          /* page background */
+  --card-bg: #ffffff;     /* form card background */
+  --primary: #1d4ed8;     /* blue */
+  --primary-dark: #1e40af;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --error: #b91c1c;
+  --radius: 12px;
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 0.75rem;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* Main layout */
+main {
+  max-width: 900px;
+  margin: 1.5rem auto 2rem;
+  padding: 0 1rem;
+}
+
+/* Form card */
+.form-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.form-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.form-card h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.required {
+  color: var(--error);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  background-color: #ffffff;
+}
+
+/* Rating */
+fieldset.form-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset.form-group legend {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.rating-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.rating-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+/* Checkboxes */
+.checkbox-group {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: 1fr;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.5);
+}
+
+input[type="submit"]:focus {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+/* Confirmation page styles */
+.thank-you {
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+.summary {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.summary p {
+  margin: 0.25rem 0;
+}
+
+.counter {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.back-link {
+  margin-top: 0.75rem;
+}
+
+.back-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+/* Focus style for keyboard users */
+a:focus {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  .checkbox-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -27,36 +27,30 @@
                 <!-- Product Name (select, populated by JS) -->
                 <div class="form-group">
                     <label for="productName">Product Name <span class="required">*</span></label>
-                    <select id="productName" name="productName" required>
-                        <!-- Options will be inserted by JavaScript -->
+                    <select id="product" name="product" required>
+                        <option value="" disabled selected>Select a product...</option>
                     </select>
+
                 </div>
 
                 <!-- Overall Rating (radio buttons 1–5) -->
                 <fieldset class="form-group">
                     <legend>Overall Rating <span class="required">*</span></legend>
                     <div class="rating-group">
-                        <label>
-                            <input type="radio" name="rating" value="1" required />
-                            1 ★
-                        </label>
-                        <label>
-                            <input type="radio" name="rating" value="2" />
-                            2 ★★
-                        </label>
-                        <label>
-                            <input type="radio" name="rating" value="3" />
-                            3 ★★★
-                        </label>
-                        <label>
-                            <input type="radio" name="rating" value="4" />
-                            4 ★★★★
-                        </label>
-                        <label>
-                            <input type="radio" name="rating" value="5" />
-                            5 ★★★★★
-                        </label>
+                        <label for="rate1"><input type="radio" id="rate1" name="rating" value="1" required> 1 ★</label>
+
+                        <label for="rate2"><input type="radio" id="rate2" name="rating" value="2" required> 2 ★★</label>
+
+                        <label for="rate3"><input type="radio" id="rate3" name="rating" value="3" required> 3
+                            ★★★</label>
+
+                        <label for="rate4"><input type="radio" id="rate4" name="rating" value="4" required> 4
+                            ★★★★</label>
+
+                        <label for="rate5"><input type="radio" id="rate5" name="rating" value="5" required> 5
+                            ★★★★★</label>
                     </div>
+
                 </fieldset>
 
                 <!-- Date of Installation -->
@@ -68,28 +62,35 @@
                 <!-- Useful Features (checkboxes) -->
                 <fieldset class="form-group">
                     <legend>Useful Features (check all that apply)</legend>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="features" value="Durability" />
+                    <div class="features-group">
+
+                        <label for="feat1">
+                            <input type="checkbox" id="feat1" name="features" value="durability">
                             Durability
                         </label>
-                        <label>
-                            <input type="checkbox" name="features" value="Ease of Use" />
-                            Ease of Use
-                        </label>
-                        <label>
-                            <input type="checkbox" name="features" value="Performance" />
+
+                        <label for="feat2">
+                            <input type="checkbox" id="feat2" name="features" value="performance">
                             Performance
                         </label>
-                        <label>
-                            <input type="checkbox" name="features" value="Design" />
-                            Design
-                        </label>
-                        <label>
-                            <input type="checkbox" name="features" value="Value for Money" />
+
+                        <label for="feat3">
+                            <input type="checkbox" id="feat3" name="features" value="value">
                             Value for Money
                         </label>
+
+                        <label for="feat4">
+                            <input type="checkbox" id="feat4" name="features" value="ease">
+                            Ease of Use
+                        </label>
+
+                        <label for="feat5">
+                            <input type="checkbox" id="feat5" name="features" value="design">
+                            Design
+                        </label>
+
                     </div>
+
                 </fieldset>
 
                 <!-- Written Review (optional) -->

@@ -29,36 +29,25 @@ const products = [
   }
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Populate product select
-  const select = document.getElementById("productName");
-  if (select) {
-    // First placeholder option
-    const placeholder = document.createElement("option");
-    placeholder.textContent = "Select a product...";
-    placeholder.value = "";
-    placeholder.disabled = true;
-    placeholder.selected = true;
-    select.appendChild(placeholder);
+const selectElement = document.getElementById("product");
 
-    // Add options from array
-    products.forEach((product) => {
-      const opt = document.createElement("option");
-      opt.value = product.id;        // value is the product ID
-      opt.textContent = product.name; // visible text is the product name
-      select.appendChild(opt);
-    });
-  }
-
-  // Footer: current year and last modified
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-
-  const lastMod = document.getElementById("lastModified");
-  if (lastMod) {
-    lastMod.textContent = `Last Modified: ${document.lastModified}`;
-  }
+products.forEach(product => {
+  const option = document.createElement("option");
+  option.value = product.id;
+  option.textContent = product.name;
+  selectElement.appendChild(option);
 });
+
+
+// Footer: current year and last modified
+const yearSpan = document.getElementById("currentYear");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+const lastMod = document.getElementById("lastModified");
+if (lastMod) {
+  lastMod.textContent = `Last Modified: ${document.lastModified}`;
+}
+
 

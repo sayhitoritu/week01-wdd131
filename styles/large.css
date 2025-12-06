@@ -1,0 +1,29 @@
+/* Large screen tweaks */
+@media (min-width: 700px) {
+    .main-nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: stretch;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

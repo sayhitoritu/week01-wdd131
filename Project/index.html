@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Delhi Travel Guide</title>
+
+    <meta name="description" content="New Delhi Travel Guide – discover top attractions, food, and travel tips." />
+    <meta name="author" content="Ritu Rai" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/large.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="logo">New Delhi Travel Guide</h1>
+
+            <button id="menuButton" class="menu-button" aria-controls="mainNav" aria-expanded="false"
+                aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="attractions.html">Attractions</a>
+                <a href="plan.html">Plan Your Trip</a>
+                <a href="references.html">References</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section with lazy-loaded image -->
+        <section class="hero">
+            <img src="images/delhi-hero-small.webp" srcset="
+          images/delhi-hero-small.webp 480w,
+          images/delhi-hero-medium.webp 900w,
+          images/delhi-hero-large.webp 1400w
+        " sizes="(max-width: 600px) 100vw, (max-width: 1000px) 90vw, 1200px"
+                alt="View of India Gate in New Delhi at sunset" loading="lazy" />
+            <div class="hero-text">
+                <h2>Welcome to New Delhi</h2>
+                <p>Discover history, culture, food, and spiritual places in India’s busy capital.</p>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Why Visit New Delhi?</h2>
+            <p>
+                New Delhi blends ancient monuments, busy markets, modern malls, and peaceful temples.
+                This website will guide you through famous landmarks, local food, and basic travel tips.
+            </p>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <h3>Top Attractions</h3>
+                <p>Explore India Gate, Red Fort, Qutub Minar, Lotus Temple, and more.</p>
+            </article>
+            <article class="card">
+                <h3>Local Food</h3>
+                <p>Try chole bhature, momo, paratha, street chai, and Delhi’s famous sweets.</p>
+            </article>
+            <article class="card">
+                <h3>Travel Tips</h3>
+                <p>Best time to visit, transport options, dress tips, and staying safe.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="currentYear"></span> New Delhi Travel Guide | Ritu Rai</p>
+        <p id="lastModified"></p>
+        <p><a href="references.html">Sources & References</a></p>
+    </footer>
+</body>
+
+</html>

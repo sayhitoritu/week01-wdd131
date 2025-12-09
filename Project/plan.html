@@ -4,40 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Plan Your Trip – New Delhi Travel Guide</title>
-
-    <meta name="description" content="Plan your New Delhi trip with this simple travel interest form." />
-    <meta name="author" content="Ritu Rai" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <title>New Delhi Travel Guide | Plan Your Trip</title>
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/large.css" />
-
-    <!-- JavaScript -->
-    <script src="scripts/main.js" defer></script>
 </head>
 
-<body>
+<body data-page="plan">
     <header class="site-header">
         <div class="header-inner">
             <h1 class="logo">New Delhi Travel Guide</h1>
 
-            <!-- Mobile menu button -->
-            <button id="menuButton" class="menu-button" aria-controls="mainNav" aria-expanded="false"
-                aria-label="Open navigation">
-                ☰
-            </button>
-
-            <!-- Main navigation -->
-            <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+            <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
-                <a href="attractions.html">Attractions</a>
+                <a href="attraction.html">Attractions</a>
                 <a href="plan.html">Plan Your Trip</a>
                 <a href="references.html">References</a>
             </nav>
@@ -45,137 +23,67 @@
     </header>
 
     <main>
-        <section class="hero">
-            <img src="images/delhi-hero-small.webp" srcset="
-          images/delhi-hero-small.webp 480w,
-          images/delhi-hero-medium.webp 900w,
-          images/delhi-hero-large.webp 1400w
-        " sizes="(max-width: 600px) 100vw, (max-width: 1000px) 90vw, 1200px"
-                alt="Busy New Delhi street with traffic and shops" loading="lazy" />
-            <div class="hero-text">
-                <h2>Plan Your New Delhi Trip</h2>
-                <p>
-                    Share your travel details and interests so you can create a simple plan
-                    for your visit to New Delhi.
-                </p>
-            </div>
-        </section>
-
-        <section class="intro">
-            <h2>Tell Us About Your Trip</h2>
-            <p id="visitCount"></p>
+        <section>
+            <h2>Plan Your New Delhi Trip</h2>
             <p>
-                This form helps you think about your preferred dates, type of trip, and
-                what you want to see and do in New Delhi.
+                Fill out this form to create a simple plan. The information is
+                saved in your browser so you can return to it on the same device.
             </p>
+
+            <form id="tripForm">
+                <label for="travelerName">Name</label>
+                <input id="travelerName" name="travelerName" required />
+
+                <label for="days">Number of days in Delhi</label>
+                <input id="days" name="days" type="number" min="1" max="30" required />
+
+                <label for="budget">Budget (in INR)</label>
+                <input id="budget" name="budget" type="number" min="1000" step="500" required />
+
+                <fieldset>
+                    <legend>Main interest</legend>
+                    <label>
+                        <input type="radio" name="interest" value="heritage" required />
+                        Heritage and history
+                    </label>
+                    <label>
+                        <input type="radio" name="interest" value="food" />
+                        Street food
+                    </label>
+                    <label>
+                        <input type="radio" name="interest" value="shopping" />
+                        Shopping
+                    </label>
+                    <label>
+                        <input type="radio" name="interest" value="relaxing" />
+                        Parks and relaxing
+                    </label>
+                </fieldset>
+
+                <label for="notes">Notes or preferences</label>
+                <textarea id="notes" name="notes" rows="4"
+                    placeholder="Example: prefer vegetarian food, early mornings, or metro travel."></textarea>
+
+                <button type="submit">Save Trip Plan</button>
+            </form>
+
+            <p id="tripFeedback" aria-live="polite"></p>
         </section>
 
-        <section class="card">
-            <h2>Travel Information Form</h2>
-
-            <!-- You can keep action="plan.html" so it just reloads with query string -->
-            <form action="plan.html" method="get">
-                <!-- Traveler Name -->
-                <div class="form-field">
-                    <label for="name">Full Name<span aria-hidden="true">*</span></label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-
-                <!-- Email -->
-                <div class="form-field">
-                    <label for="email">Email Address<span aria-hidden="true">*</span></label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-
-                <!-- Travel Date -->
-                <div class="form-field">
-                    <label for="date">Planned Arrival Date<span aria-hidden="true">*</span></label>
-                    <input type="date" id="date" name="arrivalDate" required />
-                </div>
-
-                <!-- Number of Days -->
-                <div class="form-field">
-                    <label for="days">Number of Days in New Delhi<span aria-hidden="true">*</span></label>
-                    <input type="number" id="days" name="days" min="1" max="60" required />
-                </div>
-
-                <!-- Trip type (radio) -->
-                <fieldset class="form-field">
-                    <legend>Trip Type<span aria-hidden="true">*</span></legend>
-
-                    <div>
-                        <input type="radio" id="tripSolo" name="tripType" value="solo" required />
-                        <label for="tripSolo">Solo</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="tripFamily" name="tripType" value="family" />
-                        <label for="tripFamily">Family</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="tripFriends" name="tripType" value="friends" />
-                        <label for="tripFriends">Friends</label>
-                    </div>
-                </fieldset>
-
-                <!-- Interests (checkboxes) -->
-                <fieldset class="form-field">
-                    <legend>Main Interests (check all that apply)</legend>
-
-                    <div>
-                        <input type="checkbox" id="interestAttractions" name="interests" value="attractions" />
-                        <label for="interestAttractions">Historic attractions (Red Fort, Qutub Minar, etc.)</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="interestFood" name="interests" value="food" />
-                        <label for="interestFood">Street food and local restaurants</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="interestTemples" name="interests" value="temples" />
-                        <label for="interestTemples">Temples and spiritual places</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="interestShopping" name="interests" value="shopping" />
-                        <label for="interestShopping">Markets and shopping</label>
-                    </div>
-                </fieldset>
-
-                <!-- Budget (select) -->
-                <div class="form-field">
-                    <label for="budget">Approximate Budget (per day)</label>
-                    <select id="budget" name="budget">
-                        <option value="">Select a range...</option>
-                        <option value="low">₹1,000 – ₹2,000</option>
-                        <option value="medium">₹2,000 – ₹4,000</option>
-                        <option value="high">₹4,000 – ₹8,000</option>
-                        <option value="luxury">₹8,000+</option>
-                    </select>
-                </div>
-
-                <!-- Extra Notes -->
-                <div class="form-field">
-                    <label for="notes">Anything special you want to plan?</label>
-                    <textarea id="notes" name="notes" rows="4"
-                        placeholder="For example: I want to visit the temple on Sunday morning, or I need family-friendly activities."></textarea>
-                </div>
-
-                <!-- Submit -->
-                <div class="form-field">
-                    <input type="submit" value="Create My Simple Plan" />
-                </div>
-            </form>
+        <section>
+            <h2>Your Last Saved Trip Plan</h2>
+            <div id="tripSummary">
+                <!-- JavaScript will display saved plan here -->
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; <span id="currentYear"></span> New Delhi Travel Guide | Ritu Rai</p>
-        <p id="lastModified"></p>
-        <p><a href="references.html">Sources &amp; References</a></p>
+        <p>&copy; <span id="year"></span> New Delhi Travel Guide</p>
+        <a href="references.html">References</a>
     </footer>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 
 </html>

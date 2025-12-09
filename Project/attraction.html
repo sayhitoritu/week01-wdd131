@@ -1,16 +1,60 @@
-<main>
-    <h2>Top Attractions in New Delhi</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-    <p id="visitCount"></p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Delhi Travel Guide | Attractions</title>
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
 
-    <div class="filters">
-        <button type="button" data-filter="all">All</button>
-        <button type="button" data-filter="monument">Monuments</button>
-        <button type="button" data-filter="fort">Forts</button>
-        <button type="button" data-filter="temple">Temples</button>
-    </div>
+<body data-page="attractions">
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="logo">New Delhi Travel Guide</h1>
 
-    <section id="attractionsContainer" class="cards" aria-live="polite">
-        <!-- JS fills this -->
-    </section>
-</main>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="attraction.html">Attractions</a>
+                <a href="plan.html">Plan Your Trip</a>
+                <a href="references.html">References</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Must-See Attractions in New Delhi</h2>
+            <p>
+                Use the filter to view heritage sites, markets, parks, spiritual
+                places, or all attractions together.
+            </p>
+
+            <label for="categoryFilter" class="filter-label">
+                Filter by category:
+            </label>
+            <select id="categoryFilter" name="categoryFilter">
+                <option value="all">All</option>
+                <option value="heritage">Heritage</option>
+                <option value="market">Market</option>
+                <option value="park">Park</option>
+                <option value="spiritual">Spiritual</option>
+            </select>
+        </section>
+
+        <section>
+            <div id="attractionsContainer" class="card-grid">
+                <!-- JavaScript will render attraction cards here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> New Delhi Travel Guide</p>
+        <a href="references.html">References</a>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+</body>
+
+</html>

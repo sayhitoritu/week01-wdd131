@@ -4,34 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Delhi Travel Guide</title>
-
-    <meta name="description" content="New Delhi Travel Guide – discover top attractions, food, and travel tips." />
-    <meta name="author" content="Ritu Rai" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+    <title>New Delhi Travel Guide | Home</title>
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/large.css" />
-
-    <script src="scripts/main.js" defer></script>
 </head>
 
-<body>
+<body data-page="home">
     <header class="site-header">
         <div class="header-inner">
             <h1 class="logo">New Delhi Travel Guide</h1>
 
-            <button id="menuButton" class="menu-button" aria-controls="mainNav" aria-expanded="false"
-                aria-label="Open navigation">
-                ☰
-            </button>
-
-            <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+            <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
-                <a href="attractions.html">Attractions</a>
+                <a href="attraction.html">Attractions</a>
                 <a href="plan.html">Plan Your Trip</a>
                 <a href="references.html">References</a>
             </nav>
@@ -39,49 +23,48 @@
     </header>
 
     <main>
-        <!-- Hero section with lazy-loaded image -->
+        <!-- Hero -->
         <section class="hero">
-            <img src="images/delhi-hero-small.webp" srcset="
-          images/delhi-hero-small.webp 480w,
-          images/delhi-hero-medium.webp 900w,
-          images/delhi-hero-large.webp 1400w
-        " sizes="(max-width: 600px) 100vw, (max-width: 1000px) 90vw, 1200px"
-                alt="View of India Gate in New Delhi at sunset" loading="lazy" />
             <div class="hero-text">
-                <h2>Welcome to New Delhi</h2>
-                <p>Discover history, culture, food, and spiritual places in India’s busy capital.</p>
+                <h2>Discover New Delhi</h2>
+                <p>
+                    New Delhi is a mix of history, food, markets, and modern life.
+                    This guide will help you choose where to go, when to visit, and
+                    how to plan a safe and memorable trip.
+                </p>
+                <button id="themeToggle" type="button">
+                    Toggle Light / Dark Theme
+                </button>
             </div>
+
+            <picture>
+                <source srcset="images\india-gate-sunset.webp" type="image/webp" />
+                <img src="images/india-gate.jpg" alt="India Gate monument in New Delhi at sunset" loading="lazy"
+                    class="hero-image" />
+            </picture>
         </section>
 
-        <section class="intro">
-            <h2>Why Visit New Delhi?</h2>
+        <!-- Neighborhoods -->
+        <section>
+            <h2>Popular Areas in New Delhi</h2>
             <p>
-                New Delhi blends ancient monuments, busy markets, modern malls, and peaceful temples.
-                This website will guide you through famous landmarks, local food, and basic travel tips.
+                Start your visit with these well-known neighborhoods. Use the
+                “Add to favorites” button to mark places you want to remember.
+                Your favorites are saved only in this browser.
             </p>
-        </section>
 
-        <section class="cards">
-            <article class="card">
-                <h3>Top Attractions</h3>
-                <p>Explore India Gate, Red Fort, Qutub Minar, Lotus Temple, and more.</p>
-            </article>
-            <article class="card">
-                <h3>Local Food</h3>
-                <p>Try chole bhature, momo, paratha, street chai, and Delhi’s famous sweets.</p>
-            </article>
-            <article class="card">
-                <h3>Travel Tips</h3>
-                <p>Best time to visit, transport options, dress tips, and staying safe.</p>
-            </article>
+            <div id="neighborhoodsContainer" class="card-grid">
+                <!-- JavaScript will render neighborhood cards here -->
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; <span id="currentYear"></span> New Delhi Travel Guide | Ritu Rai</p>
-        <p id="lastModified"></p>
-        <p><a href="references.html">Sources & References</a></p>
+        <p>&copy; <span id="year"></span> New Delhi Travel Guide</p>
+        <a href="references.html">References</a>
     </footer>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 
 </html>
